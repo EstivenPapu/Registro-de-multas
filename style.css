@@ -1,54 +1,123 @@
+:root {
+  --brand-azul: #1f6aa5;       
+  --brand-azul-hover: #2980b9; 
+  --brand-azul-muted: #17456b; 
+  
+  --acento-oro: #cca43b;      
+  --acento-oxido: #b05c3d;     
+
+  --bg-principal: #0d1117;     
+  --bg-tarjeta: #161b22;      
+  --bg-elemento: #21262d;      
+  --bg-elemento-hover: #30363d;
+
+  --text-primary: #f0f6fc;     
+  --text-secondary: #8b949e;   
+  --text-muted: #484f58;       
+  --border-sutil: #30363d;  
+  --border-fuerte: #444c56;   
+  --shadow-premium: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+  --success: #2ea043;          
+  --error: #f85149;            
+  --warning: #d29922;        
+
+  --fuente-pro: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .body {
-    font-family: Arial, sans-serif;
-    background-color: #1b1b1b;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: var(--bg-principal);
+}
+
+@media (max-width: 480px ){
+    .img{
+        display: none;
+    }
+    .usuario .btn-usuario{
+        font-size: 8px;
+    }
+    .titulo h1{
+        font-size: 20px;
+    }
+    .titulo p{
+        font-size: 15px;
+    }
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+    background-color: var(--brand-azul);
+    color: var(--text-primary);
+    padding: 10px;
     text-align: center;
+}
+
+.titulo p {
+    font-weight: lighter;
+}
+
+.img img {
+    width: 60px;
+    height: 60px;
 }
 
 .usuario {
     margin-left: auto;
 }
 
-.usuario button {
-    background-color: #494949;
-    color: #fff;
+.btn {
+    background-color: var(--bg-principal);
+    color: var(--text-primary);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px;    
+    border-radius: 5px;
+    box-shadow: var(--shadow-premium);
 }
 
-.usuario button:hover {
-    background-color: #a8a7a7;
-    color: #333;
-    transform: scale(1.05);
+.btn:hover {
+    background-color: var(--brand-azul-hover);
+    color: var(--text-primary);
     border-radius: 5px;
 }
 
-.consulta-multas {
-    padding: 20px;
-    text-align: center;
-    margin: 40px;
-    background-color: #747272;
-    border-radius: 10px;
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    
 }
 
-.img img {
-    width: 60px;
-    height: 60px;
+.consulta-multas {
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    background-color: var(--brand-azul-muted);
+    color: var(--text-primary);
+    border-radius: 10px;
+    box-shadow: var(--shadow-premium);
 }
 
 .formulario-consulta {
@@ -64,38 +133,34 @@
     width: 50%;
     max-width: 300px;
     border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.btn-consultar {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-consultar:hover {
-    background-color: #a8a7a7;
-    color: #333;
-    transform: scale(1.05);
 }
 
 .oculto {
     display: none;
 }
 
+.error {
+    color: var(--error);
+}
+
 .resultado {
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #747272;
+    background-color: var(--bg-tarjeta);
+    color: var(--text-primary);
     margin: 40px;
     padding: 20px;
     border-radius: 10px;
     gap: 10px;
+    box-shadow: var(--shadow-premium);
+}
+
+h1{
+    font-family: var(--fuente-pro);
 }
 
 .tarjeta-vecino {
@@ -105,6 +170,9 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    border: 1px dashed var(--bg-elemento-hover);
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .multas{
@@ -114,15 +182,32 @@
     width: 100%;
 }
 
+.titulo-multas{
+    width: 100%;
+}
+
+.titulo-multas h4{
+    font-weight: lighter;
+    color: var(--text-secondary);
+}
+
+hr{
+    width: 100%;
+    border: 1px solid var(--bg-elemento-hover);
+}
+
 .tarjeta-multa {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
     padding: 10px;
     border-radius: 5px;
-    background-color: #5e5e5e;
+    background-color: var(--brand-azul-muted);
+    box-shadow: -12px -10px 16px -3px rgba(0,0,0,0.33) inset;
+    -webkit-box-shadow: -12px -10px 16px -3px rgba(0,0,0,0.33) inset;
+    -moz-box-shadow: -12px -10px 16px -3px rgba(0,0,0,0.33) inset;
+    
 }
 
 .values{
@@ -138,17 +223,36 @@
     background-color: rgb(145, 123, 84);
     padding: 5px;
     border-radius: 10px;
-    margin-right: 20px;
+    margin-right: 10px;
     color: rgb(255, 166, 0);
     font-weight: lighter;
 }
 
 .valor{
-    color: rgb(204, 61, 61);
+    color: var(--error);
 }
 
+.total{
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--bg-elemento-hover);
+    border-radius: 5px;
+}
 
+.total h3{
+    color: var(--error);
+}
 
-.tarjeta-multa:hover{
-    transform: scale(1.1, 1.1);
+.footer {
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    background-color: var(--brand-azul);
+    padding: 10px;
+    font-size: 10px;
+    color: var(--text-secondary);
 }
