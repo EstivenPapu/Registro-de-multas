@@ -69,16 +69,23 @@ formulario.addEventListener('submit', function(event) {
 
         let htmlMultas = "";
         let totalMultas = 0;
-
+        let contador = 0;
         vecinoEncontrado.multas.forEach(multa => {
             htmlMultas += `
                 <div class="tarjeta-multa">
-                    <h5>Motivo: ${multa.motivo}</h5>
-                    <h5>fecha: ${multa.fecha}</h5>
-                    <h5>valor: ${multa.valor}</h5>
-                    <h5>Estado: ${multa.estado}</h5>
+
+                    <div class="info">
+                        <h5>Motivo: ${multa.motivo}</h5>
+                        <h5>${multa.fecha}</h5>
+                    </div>
+                    <div class="values">
+                        <h5 class="estado">${multa.estado}</h5>
+                        <h5 class="valor">$${multa.valor}</h5>
+                    </div>
+    
                 </div>
             `
+            contador++;
             totalMultas += Number(multa.valor);
         })
 
@@ -88,6 +95,7 @@ formulario.addEventListener('submit', function(event) {
                 <h4>Numero casa: ${vecinoEncontrado.casa}</h4>
                 <h4>Propietario: ${vecinoEncontrado.nombre}</h4>
                 <h2>Multas registradas</h2>
+                <h6>Multas pendientes (${contador})</h6>
                 <div class="multas">
                     ${htmlMultas || `<p>Este vecino no tiene multas registradas</p>`}
                 </div>
