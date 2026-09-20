@@ -87,11 +87,11 @@ formulario.addEventListener('submit', function(event) {
             <div class="tarjeta-vecino">
                 <h4>Numero casa: ${vecinoEncontrado.casa}</h4>
                 <h4>Propietario: ${vecinoEncontrado.nombre}</h4>
-                <h4>Multas registradas</h4>
+                <h2>Multas registradas</h2>
                 <div class="multas">
                     ${htmlMultas || `<p>Este vecino no tiene multas registradas</p>`}
                 </div>
-                <h4>Total multas: ${totalMultas}</h4>
+                <h4>Total multas: $${totalMultas}</h4>
             </div>
         `;
 
