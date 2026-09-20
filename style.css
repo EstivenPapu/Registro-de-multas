@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #1b1b1b;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.usuario {
+    margin-left: auto;
+}
+
+.usuario button {
+    background-color: #494949;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;    
+}
+
+.usuario button:hover {
+    background-color: #a8a7a7;
+    color: #333;
+    transform: scale(1.05);
+    border-radius: 5px;
+}
+
+.consulta-multas {
+    padding: 20px;
+    text-align: center;
+    margin: 40px;
+    background-color: #747272;
+    border-radius: 10px;
+}
+
+.img img {
+    width: 60px;
+    height: 60px;
+}
+
+.formulario-consulta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input-consulta {
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn-consultar {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-consultar:hover {
+    background-color: #a8a7a7;
+    color: #333;
+    transform: scale(1.05);
+}
+
+.oculto {
+    display: none;
+}
+
+.resultado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #747272;
+    margin: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.tarjeta-vecino {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.multas{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+
+}
+
+.multas .tarjeta-multa {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #333;
+}
+
+.multas .tarjeta-multa:hover{
+    transform: scale(1.1, 1.1);
+}
